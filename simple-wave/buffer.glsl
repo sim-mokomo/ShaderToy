@@ -14,7 +14,7 @@ vec2 get_current_uv_using_offset(vec2 fragCoord, vec2 offset){
 
 void mainImage( out vec4 fragColor, in vec2 fragCoord )
 {
-    // note: x,y地点における波の高さの偏微分を行う事で、波の加速度を求めることができる。
+    // note: x,y地点における波の高さの二回微分を行う事で、波の加速度を求めることができる。
     // xの加速度: (u(x + 1, y) - u(x, y)) - (u(x, y) - u(x - 1, y)) = u(x + 1, y) + (x -1 , y) - 2u(x , y)
     // yの加速度: (u(x, y + 1) - u(x, y)) - (u(x, y) - u(x, y - 1)) = u(x, y + 1) + (x , y - 1) - 2u(x , y)
     // 波の加速度 = xの加速度 + yの加速度 = u(x + 1, y) + (x -1 , y) + u(x, y + 1) + (x , y - 1) - 4u(x , y)
